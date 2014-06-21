@@ -28,9 +28,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'my-secret-key')
 
 ADMINS = eval(os.environ.get('ADMINS', '()'))
 
+AUTH_USER_MODEL = 'customusers.CustomUser'
+
 # Application definition
 
-INSTALLED_APPS = (
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +40,16 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
+
+THIRD_PARTY_APPS = (
+    'south',
+)
+
+PROJECT_APPS = (
+    'apps.customusers',
+)
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
