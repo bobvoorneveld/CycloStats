@@ -1,0 +1,83 @@
+from django.db import models
+
+COUNTRY_CHOICES = (
+    ('ITA', 'Italy'),
+    ('KAZ', 'Kazakhstan'),
+    ('TRI', 'Trinidad and Tobago'),
+    ('FRA', 'France'),
+    ('BEL', 'Belgium'),
+    ('CHN', 'China'),
+    ('JPN', 'Japan'),
+    ('CMR', 'Cameroon'),
+    ('BUR', 'Burkina Faso'),
+    ('INA', 'Indonesia'),
+    ('BOL', 'Bolivia'),
+    ('RWA', 'Rwanda'),
+    ('UAE', 'United Arab Emirates'),
+    ('EGY', 'Egypt'),
+    ('QAT', 'Qatar'),
+    ('MYA', 'Myanmar'),
+    ('IND', 'India'),
+    ('CRC', 'Costa Rica'),
+    ('AUS', 'Australia'),
+    ('NZL', 'New Zealand'),
+    ('GAB', 'Gabon'),
+    ('VEN', 'Venezuela'),
+    ('ARG', 'Argentina'),
+    ('RSA', 'South Africa'),
+    ('ESP', 'Spain'),
+    ('BRA', 'Brazil'),
+    ('SLO', 'Slovenia'),
+    ('POR', 'Portugal'),
+    ('OMA', 'Oman'),
+    ('MAR', 'Morocco'),
+    ('DOM', 'Dominican Republic'),
+    ('NAM', 'Namibia'),
+    ('SUI', 'Switzerland'),
+    ('PAR', 'Paraguay'),
+    ('CRO', 'Croatia'),
+    ('ALG', 'Algeria'),
+    ('NED', 'The Netherlands'),
+    ('CHI', 'Chili'),
+    ('MEX', 'Mexico'),
+    ('MAS', 'Malaysia'),
+    ('TPE', 'Taiwan'),
+    ('THA', 'Thailand'),
+    ('RUS', 'Russia'),
+    ('BIH', 'Bosnia and Herzegovina'),
+    ('SRB', 'Serbia'),
+    ('USA', 'United States of America'),
+    ('GER', 'Germany'),
+    ('PHI', 'Philippines'),
+    ('GBR', 'Great Britain'),
+    ('POL', 'Poland'),
+    ('DEN', 'Denmark'),
+    ('TUR', 'Turkey'),
+    ('NOR', 'Norway'),
+    ('SWE', 'Sweden'),
+    ('AZE', 'Azerbaijan'),
+    ('CZE', 'Czech Republic'),
+    ('SVK', 'Slovakia'),
+    ('HUN', 'Hungary'),
+    ('IRL', 'Ireland'),
+    ('UKR', 'Ukraine'),
+    ('ERI', 'Eritrea'),
+    ('EST', 'Estonia'),
+    ('AUT', 'Austria'),
+    ('LUX', 'Luxembourg'),
+    ('CAN', 'Canada'),
+    ('LIB', 'Lebanon'),
+    ('KOR', 'Korea'),
+    ('IRI', 'Iran'),
+)
+
+
+class Country(models.Model):
+    name = models.CharField(max_length=255)
+    abbr = models.CharField(max_length=3)
+
+    def __unicode__(self):
+        return '%s - %s' % (self.abbr, self.name)
+
+    class Meta:
+        verbose_name_plural = 'Countries'

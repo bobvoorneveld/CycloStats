@@ -47,9 +47,15 @@ THIRD_PARTY_APPS = (
 
 PROJECT_APPS = (
     'apps.customusers',
+    'apps.races',
+    'apps.teams',
 )
 
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
+LIBRARY_APPS = (
+    'libs.countries',
+)
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS + LIBRARY_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
